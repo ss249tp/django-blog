@@ -4,10 +4,17 @@
 
     <head>
         <title>Blog</title>
+        <h1>Posts</h1>
     </head>
 
     <body>
-        <p>Hello world!</p>
+        {% for post in posts %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <time>Published: {{ post.published_date }}</time>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+        {% endfor %}
     </body>
 
 </html>
